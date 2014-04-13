@@ -4,8 +4,14 @@ var mongoose = require("mongoose");
 
 mongoose.connect("mongodb://clindsay107:password123@oceanic.mongohq.com:10024/app24104304");
 
+//models
+
+var Todo = mongoose.model('Todo', {
+  text: String
+});
+
 app.get('/', function(req, res){
   res.send('hello world');
 });
 
-app.listen(3000, "0.0.0.0");
+app.listen(3000);
