@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-  
+
   <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
@@ -9,13 +9,13 @@
     <script src="core.js"></script>
     <title>Duly Noted :^)</title>
   </head>
-  
+
   <body ng-controller="mainController">
-    <div class="container">          
+    <div class="container">
       <div class="jumbotron text-center">
         <h1>Current Todo List - (<span class="label label-info">{{ todos.length }}</span>)</h1>
       </div>
-      
+
       <div id="todo-list" class="row">
         <div class="col-sm-4 col-sm-offset-4">
           <div class="checkbox" ng-repeat="todo in todos">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    
+
     <div id="todo-form" class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
@@ -39,7 +39,7 @@
 				</form>
 			</div>
 		</div>
-    
+
   </body>
-  
+
 </html>
