@@ -5,10 +5,17 @@ var mongoose = require("mongoose");
 
 mongoose.connect("mongodb://clindsay107:password123@oceanic.mongohq.com:10024/app24104304");
 
+app.configure(function() {
+		app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
+		app.use(express.logger('dev')); 						// log every request to the console
+		app.use(express.bodyParser()); 							// pull information from html in POST
+		app.use(express.methodOverride()); 						// simulate DELETE and PUT
+	});
+
 //models
 
 var Todo = mongoose.model('Todo', {
-  text: String
+  text: "string"
 });
 
 //routes
@@ -22,7 +29,7 @@ app.get('/api/todos', function(req, res) {
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
-      
+      console.log("sending todos back as JSON");
 			res.json(todos); // return all todos in JSON format
 		});
 	});
