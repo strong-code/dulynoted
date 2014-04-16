@@ -26,12 +26,14 @@ function mainController($scope, $http) {
 
   //delete selected todo
   $scope.deleteTodo = function(id) {
-    $http.delete('/api/todos/' + id).success(function(data) {
-      $scope.todos = data;
-      console.log(data);
-    }).error(function(data) {
-      console.log(data);
-    });
+    if (window.confirm("Delete this task?")) {
+      $http.delete('/api/todos/' + id).success(function(data) {
+        $scope.todos = data;
+        console.log(data);
+      }).error(function(data) {
+        console.log(data);
+      });
+    }
   };
 
 }

@@ -4,4 +4,28 @@ body {
 
 #todo-list {
   margin-bottom: 30px;
+  height: 300px;
+  width: 60%;
+  margin-left: 21%;
+  overflow: hidden;
+}
+
+#todo-list:hover {
+  overflow: scroll;    
+}
+
+#todo-list::-webkit-scrollbar { 
+    -webkit-appearance: none;
+    width: 3px;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #5bc0de;
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
 }
