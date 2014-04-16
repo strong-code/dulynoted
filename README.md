@@ -4,4 +4,6 @@ It may or may not expose a public API at some point.
 
 It is built on the MEAN stack. That is, MongoDB, Express, Angular.js and Node.js.
 
+##[Try it out](duly-noted-app.herokuapp.com) 
+
 ![screenshot](/screenshot.png)
