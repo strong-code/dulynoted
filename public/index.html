@@ -19,27 +19,33 @@
       <div id="todo-list" class="row">
         <div class="col-sm-11">
           <div class="checkbox todo-item" ng-repeat="todo in todos">
-            <label>
-              <button class="btn btn-danger" ng-click="deleteTodo(todo._id)">Done!</button> {{ todo.text }}
-            </label>
+            <button class="btn btn-danger" ng-click="deleteTodo(todo._id)">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+            <span class="todo-title" ng-click="toggleDescription($event, todo)">
+              {{ todo.text }} <span class="glyphicon glyphicon-chevron-down"></span>
+              <div class="todo-description"></div>
+            </span>
           </div>
         </div>
       </div>
     </div>
 
     <div id="todo-form" class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<div class="col-sm-6 col-sm-offset-3 text-center">
+          
 				<form>
 					<div class="form-group">
-
-						<input type="text" class="form-control input-lg text-center" placeholder="Don't forget the milk!" ng-model="formData.text">
+            <input type="text" class="form-control input-lg text-center" placeholder="Enter your task title: 'Don't forget the milk!'" ng-model="formData.text">
+            <br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Perhaps a description as well? Or not, it's optional" ng-model="formData.description">
 					</div>
 
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Create!</button>
+					  <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Create!</button>
 				</form>
-			</div>
+          
+      </div>
 		</div>
 
   </body>
-
 </html>

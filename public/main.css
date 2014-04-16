@@ -10,6 +10,17 @@ body {
   overflow: hidden;
 }
 
+.todo-description {
+  font-style: italic;
+  color: grey;
+  margin-left: 10%;
+  display: none;
+}
+
+.todo-title:hover {
+  cursor: pointer;
+}
+
 #todo-list:hover {
   overflow: scroll;    
 }

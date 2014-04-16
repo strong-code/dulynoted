@@ -35,5 +35,17 @@ function mainController($scope, $http) {
       });
     }
   };
+  
+  //un-hide the description box for a todo
+  $scope.toggleDescription = function($event, todo) {
+    var $children = $($event.currentTarget).children();
+    var $description = $children.last();
+    var $icon = $children.first();
+    
+    $icon.toggleClass('glyphicon-chevron-down');
+    $icon.toggleClass('glyphicon-chevron-up');
+    $description.text(todo.description);
+    $description.slideToggle('fast');
+  };
 
 }
