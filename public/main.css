@@ -40,3 +40,7 @@ input:focus::-webkit-input-placeholder
 {
     color: transparent;
 }
+
+.hidden {
+  display: none;
+}

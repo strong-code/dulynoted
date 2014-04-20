@@ -19,7 +19,11 @@ function mainController($scope, $http) {
       $scope.formData = {};
       $scope.todos = data;
       console.log(data);
+      if (!$('.alert-danger').hasClass('hidden')) {
+       $('.alert-danger').toggleClass('hidden');
+      };
     }).error(function(data) {
+      $('.alert-danger').toggleClass('hidden');
       console.log(data);
     });
   };

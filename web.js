@@ -37,6 +37,10 @@ app.get('/api/todos', function(req, res) {
 
 	// create todo and send back all todos after creation
 	app.post('/api/todos', function(req, res) {
+    
+    if (req.body.text === undefined || req.body.text === "") {
+      return res.send(422, {error: 'Title cannot be blank'});
+    }
 
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
